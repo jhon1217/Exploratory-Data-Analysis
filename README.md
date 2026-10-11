@@ -1,25 +1,42 @@
-# Exploratory-Data-Analysis
+# Household Power Consumption: Exploratory Analysis
 
-This assignment uses data from the UC Irvine Machine Learning Repository, a popular repository for machine learning datasets. In particular, we will be using the “Individual household electric power consumption Data Set” which I have made available on the course web site:
+Four reproducible R visualizations of household electricity consumption during February 1–2, 2007.
 
-   
-   #### Dataset: Electric power consumption [20Mb]
-       
-   #### Description: Measurements of electric power consumption in one household with a one-minute sampling rate over a period of almost 4 years. Different electrical                 quantities and some sub-metering values are available.
+## Question
 
-Plot 1
+How do total active power, voltage, reactive power, and three sub-metering channels change over two days?
 
-![](https://github.com/jhon1217/Exploratory-Data-Analysis/blob/master/plot1.png)
+## Data
 
+- **Source:** [UCI Machine Learning Repository — Individual Household Electric Power Consumption](https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption)
+- **Original scope:** one-minute measurements collected over almost four years
+- **Analysis window:** February 1–2, 2007
 
-Plot 2
+The scripts download the source archive when it is not already present. Raw data are excluded from version control.
 
-![](https://github.com/jhon1217/Exploratory-Data-Analysis/blob/master/plot2.png)
+## Results
 
-Plot 3
+| Distribution | Active power over time |
+|---|---|
+| ![Histogram of global active power](plot1.png) | ![Time series of global active power](plot2.png) |
 
-![](https://github.com/jhon1217/Exploratory-Data-Analysis/blob/master/plot3.png)
+| Sub-metering channels | Combined four-panel view |
+|---|---|
+| ![Energy sub-metering time series](plot3.png) | ![Combined electricity measurements](plot4.png) |
 
-Plot 4
+## Reproduce
 
-![](https://github.com/jhon1217/Exploratory-Data-Analysis/blob/master/plot4.png)
+Run from the repository root with R and the `data.table` package installed:
+
+```r
+source("Plot1.R")
+source("plot2.R")
+source("plot3.R")
+source("plot4.R")
+```
+
+`load_data.R` performs the shared download, parsing, and date filtering so each chart script remains focused on its visual.
+
+## Author
+
+**Jhon Deiner Diaz** · [Full data portfolio](https://jhon1217.github.io/jhu-data-science-projects/)
